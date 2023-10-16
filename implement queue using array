@@ -1,0 +1,56 @@
+class madhu:
+    def __init__(self):
+        self.data=[]
+        self.front=0
+        self.rear=-1
+        self.size=0
+    def is_size(self):
+        return self.size==0
+    def append(self,item):
+        if self.data is None:
+            return None
+        else:
+            self.data.append(item)
+            self.rear+=1
+            self.size+=1
+    def remove(self):
+        if self.data is None:
+            return None
+        else:
+            removed_data=self.data.pop(1)
+            self.front+=1
+            self.size-=1
+            return removed_data
+    def add(self,item,postion):
+        if self.data is None:
+            return "queues is empty"
+        else:
+            self.data.insert(self.front+postion,item)
+            self.rear+=1
+            self.size+=1
+    def remove(self):
+        if self.data is None:
+            return "queues is empty"
+        else:
+            removed_item=self.data.pop(0)
+            self.front+=1
+            self.size-1
+    def delete(self,postion):
+        if postion<0 or postion>self.size:
+            return None
+        else:
+            delete_data=self.data.pop(self.front+postion)
+            self.front+=1
+            self.rear-=1
+            self.size-=1
+            return delete_data
+
+ram=madhu()
+ram.append(1)
+ram.append(2)
+ram.append(3)
+ram.append(4)
+ram.append(5)
+ram.delete(1)
+ram.remove()
+ram.add(0,2)
